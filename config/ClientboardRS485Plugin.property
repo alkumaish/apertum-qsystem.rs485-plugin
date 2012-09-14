@@ -1,0 +1,7 @@
+#Save from test app.
+#Wed Jul 04 13:30:36 MUT 2012
+port.stopbits=1
+port.parity=1
+port.name=COM1
+port.speed=921600
+port.bits=8
