@@ -35,7 +35,7 @@ public class EventSender implements IChangeCustomerStateEvent, IClientboardRS485
     public void change(QCustomer qc, CustomerState cs, Long newServiceId) {
         // Создаем событие
         String nom = qc.getPrefix() + qc.getNumber();
-        switch (qc.getState()) {
+        switch (cs) {
             case STATE_INVITED:
                 break;
             case STATE_INVITED_SECONDARY:

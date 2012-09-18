@@ -13,7 +13,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import ru.evgenic.rxtx.serialPort.IReceiveListener;
 import ru.evgenic.rxtx.serialPort.ISerialPort;
 import ru.evgenic.rxtx.serialPort.RxtxSerialPort;
-import ru.apertum.qsystem.common.CustomerState;
 
 /**
  * Создает поток, в потоке порт и им шлет.
@@ -45,7 +44,7 @@ public class Sender485 {
                     }
                     //1amA147>127
                     // 7й или 8й байт :  0x3C < знак «меньше» Светится стрелка влево | 0x3E > знак «больше» Светится стрелка вправо | 0x2D - знак «минус» Светится черточка без указания направления
-                    final byte[] bytes = (("123" + event.ticket + "       ").substring(0, addr.position + 2) + ">" + event.point + "         ").subSequence(0, 11).toString().getBytes();
+                    final byte[] bytes = (("123" + event.ticket + "       ").substring(0, addr.position + 2) + "-" + event.point + "         ").subSequence(0, 11).toString().getBytes();
                     bytes[0] = 0x01; // начало
                     bytes[10] = 0x07; // конец
                     bytes[1] = addr.addres; // адрес
@@ -65,12 +64,16 @@ public class Sender485 {
                         case STATE_WORK_SECONDARY:
                             break;
                         case STATE_DEAD:
+                            bytes[addr.position + 2] = 'd'; // стрелочка убирается
                             break;
                         case STATE_FINISH:
+                            bytes[addr.position + 2] = 'd'; // стрелочка убирается
                             break;
                         case STATE_POSTPONED:
+                            bytes[addr.position + 2] = 'd'; // стрелочка убирается
                             break;
                         case STATE_REDIRECT:
+                            bytes[addr.position + 2] = 'd'; // стрелочка убирается
                             break;
                         default:// нужная вещь. чтобы отсечь состояния, которые не при чем в зональном табло
                             return;
