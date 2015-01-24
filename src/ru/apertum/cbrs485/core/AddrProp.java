@@ -7,6 +7,9 @@ package ru.apertum.cbrs485.core;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -16,14 +19,18 @@ import java.util.Scanner;
  */
 public class AddrProp {
 
-    final private HashMap<String, Addr> addrs = new HashMap<> ();
+    final private HashMap<String, Addr> addrs = new HashMap<>();
+
+    public HashMap<String, Addr> getAddrs() {
+        return addrs;
+    }
 
     public static class Addr {
 
-        final String point;
-        final byte addres;
-        final int position;
-        final byte arrow;
+        public final String point;
+        public final byte addres;
+        public final int position;
+        public final byte arrow;
 
         public Addr(String point, byte addres, int position, byte arrow) {
             this.point = point;
@@ -63,7 +70,20 @@ public class AddrProp {
         return addrs.get(point);
     }
 
-    public static void main(String[] ss) {
+    public static void main(String[] ss) throws UnsupportedEncodingException {
+        String str = "Часто используя какую-либо систему, мы привыкаем к некоторым шаблонам работы. Но не всегда эти шаблоны оказываются оптимальными. Иногда мы даже приобретаем плохие привычки, которые приводят к беспорядку и неуклюжести в работе. Один из наилучших путей исправления таких недостатков – выработка привычки использовать хорошие приемы, которые препятствуют беспорядку.";
+        String str1 = URLEncoder.encode(str, "utf-8");
+        String str2 = URLDecoder.decode(str1, "utf-8");
+        System.out.println(str);
+        System.out.println(str1);
+        System.out.println(str2);
+        if (str.equals(str2)) {
+            System.out.println("OK!");
+        } else {
+            System.out.println("BAD :((");
+        }
+        
+        
         System.out.println("addrs:");
         for (String string : getInstance().addrs.keySet()) {
             byte[] bb = new byte[1];

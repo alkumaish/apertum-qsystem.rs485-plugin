@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
@@ -7,6 +7,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -58,26 +59,62 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel5" alignment="0" pref="314" max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" alignment="0" pref="314" max="32767" attributes="0"/>
-                      <Component id="buttonSend" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="buttonButt" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="spinnerAdress" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="spinnerBlink" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="textFieldData" min="-2" pref="113" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="buttonSend" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="344" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel5" alignment="0" pref="686" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="textFieldKeep" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="buttonSendAndReceive" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="spinnerAdress1" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="spinnerAdress2" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="buttonChangeAdress" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="spinnerAdress" min="-2" pref="53" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="spinnerBlink" min="-2" pref="53" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="textFieldData" min="-2" pref="113" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -93,11 +130,27 @@
                       <Component id="textFieldData" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="spinnerBlink" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonSend" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="buttonSend" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="buttonButt" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="273" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="spinnerAdress1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="spinnerAdress2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonChangeAdress" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldKeep" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonSendAndReceive" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -113,10 +166,13 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="textFieldData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="11111"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;&#x412;&#x432;&#x435;&#x434;&#x438;&#x442;&#x435; &#x432; &#x43f;&#x43e;&#x43b;&#x435; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x443; &#x434;&#x43b;&#x44f; &#x43e;&#x442;&#x441;&#x44b;&#x43b;&#x430; &#x432; &#x43f;&#x43e;&#x440;&#x442;.&lt;br&gt; &#x43f;&#x435;&#x440;&#x432;&#x44b;&#x43c; &#x431;&#x430;&#x439;&#x442;&#x43e;&#x43c; &#x435;&#x434;&#x435;&#x442; 1 - &#x43d;&#x430;&#x447;&#x430;&#x43b;&#x43e; &#x441;&#x43e;&#x43e;&#x431;&#x448;&#x435;&#x43d;&#x438;&#x44f;,&lt;br&gt; &#x432;&#x442;&#x43e;&#x440;&#x43e;&#x439; &#x431;&#x430;&#x439;&#x442; &#x44d;&#x442;&#x43e; &#x430;&#x434;&#x440;&#x435;&#x441; &#x442;&#x430;&#x431;&#x43b;&#x43e; 32-127,&lt;br&gt; &#x442;&#x440;&#x435;&#x442;&#x438;&#x439; &#x431;&#x430;&#x439;&#x442; &#x44d;&#x442;&#x43e; &#x440;&#x435;&#x436;&#x438;&#x43c; &#x43c;&#x438;&#x433;&#x430;&#x43d;&#x438;&#x44f; 32-&#x43d;&#x435; &#x43c;&#x438;&#x433;&#x430;&#x435;&#x43c;, 33-&#x43c;&#x438;&#x433;&#x430;&#x435;&#x43c; &#x43f;&#x43e;&#x441;&#x442;&#x43e;&#x44f;&#x43d;&#x43d;&#x43e;, &#x445;=[34, 127]-&#x43c;&#x438;&#x433;&#x43d;&#x435;&#x43c; &#x441;&#x442;&#x43e;&#x43b;&#x44c;&#x43a;&#x43e; &#x438; &#x43f;&#x440;&#x43e;&#x441;&#x442;&#x43e; &#x43f;&#x43e;&#x43a;&#x430;&#x437;&#x44b;&#x432;&#x430;&#x435;&#x43c; ,&lt;br&gt; &#x43f;&#x43e;&#x442;&#x43e;&#x43c; &#x43a;&#x430;&#x43a;&#x43e;&#x435;-&#x442;&#x43e; &#x43a;&#x43e;&#x43b;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43e; &#x431;&#x430;&#x439;&#x442;-34 - &#x442;&#x435;&#x43b;&#x43e; &#x441;&#x43e;&#x43e;&#x431;&#x449;&#x435;&#x43d;&#x438;&#x44f;,&lt;br&gt; &#x432; &#x43a;&#x43e;&#x43d;&#x446;&#x435; &#x437;&#x430;&#x432;&#x435;&#x440;&#x448;&#x430;&#x44e;&#x449;&#x438;&#x439; &#x431;&#x430;&#x439;&#x442;&#x438;&#x43a; - 7"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&#x412;&#x432;&#x435;&#x434;&#x438;&#x442;&#x435; &#x432; &#x43f;&#x43e;&#x43b;&#x435; &#x441;&#x442;&#x440;&#x43e;&#x43a;&#x443; &#x434;&#x43b;&#x44f; &#x43e;&#x442;&#x441;&#x44b;&#x43b;&#x430; &#x432; &#x43f;&#x43e;&#x440;&#x442;.&lt;br&gt; &#x43f;&#x435;&#x440;&#x432;&#x44b;&#x43c; &#x431;&#x430;&#x439;&#x442;&#x43e;&#x43c; &#x435;&#x434;&#x435;&#x442; 1 - &#x43d;&#x430;&#x447;&#x430;&#x43b;&#x43e; &#x441;&#x43e;&#x43e;&#x431;&#x448;&#x435;&#x43d;&#x438;&#x44f;,&lt;br&gt; &#x432;&#x442;&#x43e;&#x440;&#x43e;&#x439; &#x431;&#x430;&#x439;&#x442; &#x44d;&#x442;&#x43e; &#x430;&#x434;&#x440;&#x435;&#x441; &#x442;&#x430;&#x431;&#x43b;&#x43e; 32-127,&lt;br&gt; &#x442;&#x440;&#x435;&#x442;&#x438;&#x439; &#x431;&#x430;&#x439;&#x442; &#x44d;&#x442;&#x43e; &#x440;&#x435;&#x436;&#x438;&#x43c; &#x43c;&#x438;&#x433;&#x430;&#x43d;&#x438;&#x44f; 32-&#x43d;&#x435; &#x43c;&#x438;&#x433;&#x430;&#x435;&#x43c;, 33-&#x43c;&#x438;&#x433;&#x430;&#x435;&#x43c; &#x43f;&#x43e;&#x441;&#x442;&#x43e;&#x44f;&#x43d;&#x43d;&#x43e;, &#x445;=[34, 127]-&#x43c;&#x438;&#x433;&#x43d;&#x435;&#x43c; &#x441;&#x442;&#x43e;&#x43b;&#x44c;&#x43a;&#x43e; &#x438; &#x43f;&#x440;&#x43e;&#x441;&#x442;&#x43e; &#x43f;&#x43e;&#x43a;&#x430;&#x437;&#x44b;&#x432;&#x430;&#x435;&#x43c; ,&lt;br&gt; &#x43f;&#x43e;&#x442;&#x43e;&#x43c; &#x43a;&#x430;&#x43a;&#x43e;&#x435;-&#x442;&#x43e; &#x43a;&#x43e;&#x43b;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43e; &#x431;&#x430;&#x439;&#x442; - &#x442;&#x435;&#x43b;&#x43e; &#x441;&#x43e;&#x43e;&#x431;&#x449;&#x435;&#x43d;&#x438;&#x44f;,&lt;br&gt; &#x432; &#x43a;&#x43e;&#x43d;&#x446;&#x435; &#x437;&#x430;&#x432;&#x435;&#x440;&#x448;&#x430;&#x44e;&#x449;&#x438;&#x439; &#x431;&#x430;&#x439;&#x442;&#x438;&#x43a; - 7"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -142,7 +198,7 @@
         <Component class="javax.swing.JSpinner" name="spinnerAdress">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="0" maximum="127" minimum="0" numberType="java.lang.Byte" stepSize="1" type="number"/>
+              <SpinnerModel initial="33" maximum="127" minimum="0" numberType="java.lang.Byte" stepSize="1" type="number"/>
             </Property>
           </Properties>
         </Component>
@@ -154,9 +210,69 @@
         <Component class="javax.swing.JSpinner" name="spinnerBlink">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="0" maximum="127" minimum="0" numberType="java.lang.Byte" stepSize="1" type="number"/>
+              <SpinnerModel initial="32" maximum="127" minimum="0" numberType="java.lang.Byte" stepSize="1" type="number"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="buttonButt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x411;&#x443;&#x43a;&#x432;&#x44b;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonButtActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="textFieldKeep">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="5"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="7"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="buttonSendAndReceive">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x41e;&#x442;&#x43e;&#x441;&#x43b;&#x430;&#x442;&#x44c; &#x438; &#x43f;&#x440;&#x438;&#x43d;&#x44f;&#x442;&#x44c;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSendAndReceiveActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="spinnerAdress1">
+          <Properties>
+            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+              <SpinnerModel initial="33" maximum="127" minimum="0" numberType="java.lang.Byte" stepSize="1" type="number"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="7"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="spinnerAdress2">
+          <Properties>
+            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+              <SpinnerModel initial="33" maximum="127" minimum="0" numberType="java.lang.Byte" stepSize="1" type="number"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="buttonChangeAdress">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x421;&#x43c;&#x435;&#x43d;&#x438;&#x442;&#x44c; &#x430;&#x434;&#x440;&#x435;&#x441;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonChangeAdressActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -196,6 +312,11 @@
                           <EmptySpace pref="32" max="32767" attributes="0"/>
                           <Component id="buttonSave" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="48" max="32767" attributes="0"/>
+                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -230,7 +351,12 @@
                       <Component id="buttonRefesh" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="buttonSave" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="287" max="32767" attributes="0"/>
+                  <EmptySpace pref="339" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -319,6 +445,22 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSaveActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x41a;&#x430;&#x431;&#x438;&#x43d;&#x435;&#x442;&#x44b;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x41c;&#x438;&#x43d;&#x443;&#x441;&#x44b;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

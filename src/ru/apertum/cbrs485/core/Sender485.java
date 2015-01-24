@@ -8,6 +8,7 @@ import gnu.io.SerialPortEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Properties;
 import java.util.concurrent.LinkedBlockingQueue;
 import ru.evgenic.rxtx.serialPort.IReceiveListener;
@@ -16,6 +17,7 @@ import ru.evgenic.rxtx.serialPort.RxtxSerialPort;
 
 /**
  * Создает поток, в потоке порт и им шлет.
+ *
  * @author Evgeniy Egorov
  */
 public class Sender485 {
@@ -44,48 +46,71 @@ public class Sender485 {
                     }
                     //1amA147>127
                     // 7й или 8й байт :  0x3C < знак «меньше» Светится стрелка влево | 0x3E > знак «больше» Светится стрелка вправо | 0x2D - знак «минус» Светится черточка без указания направления
-                    final byte[] bytes = (("123" + event.ticket + "       ").substring(0, addr.position + 2) + "-" + event.point + "         ").subSequence(0, 11).toString().getBytes();
+                    byte[] bytes = null;
+                    try {
+                        bytes = (("123" + event.ticket + "       ").substring(0, addr.position + 2) + "-" + event.point + "         ").subSequence(0, 11).toString().getBytes("cp1251");
+                    } catch (UnsupportedEncodingException ex) {
+                        System.err.println("!!! ERROR !!! " + ex);
+                    }
                     bytes[0] = 0x01; // начало
                     bytes[10] = 0x07; // конец
                     bytes[1] = addr.addres; // адрес
-                    bytes[2] = 0x20; // мигание Режим мигания: 0x20 – не мигает; 0x21 – мигает постоянно; 0x22…0x7F – мигает  (N-0x21) раз.
+                    bytes[2] = 32;//0x20; // мигание Режим мигания: 0x20 – не мигает; 0x21 – мигает постоянно; 0x22…0x7F – мигает  (N-0x21) раз.
                     bytes[addr.position + 2] = addr.arrow; // стрелочка
-
 
                     switch (event.state) {
                         case STATE_INVITED:
-                            bytes[2] = 0x21; // мигание Режим мигания: 0x20 – не мигает; 0x21 – мигает постоянно;
+                            bytes[2] = 33;//0x21; // мигание Режим мигания: 0x20 – не мигает; 0x21 – мигает постоянно;
                             break;
                         case STATE_INVITED_SECONDARY:
-                            bytes[2] = 0x21; // мигание Режим мигания: 0x20 – не мигает; 0x21 – мигает постоянно;
+                            bytes[2] = 33;//0x21; // мигание Режим мигания: 0x20 – не мигает; 0x21 – мигает постоянно;
                             break;
                         case STATE_WORK:
                             break;
                         case STATE_WORK_SECONDARY:
                             break;
                         case STATE_DEAD:
-                            bytes[addr.position + 2] = 'd'; // стрелочка убирается
+                            //bytes[addr.position + 2] = 'd'; // стрелочка убирается
+                            bytes[3] = ' ';
+                            bytes[4] = ' ';
+                            bytes[5] = ' ';
+                            bytes[6] = ' ';
                             break;
                         case STATE_FINISH:
-                            bytes[addr.position + 2] = 'd'; // стрелочка убирается
+                            //bytes[addr.position + 2] = 'd'; // стрелочка убирается
+                            bytes[3] = ' ';
+                            bytes[4] = ' ';
+                            bytes[5] = ' ';
+                            bytes[6] = ' ';
                             break;
                         case STATE_POSTPONED:
-                            bytes[addr.position + 2] = 'd'; // стрелочка убирается
+                            //bytes[addr.position + 2] = 'd'; // стрелочка убирается
+                            bytes[3] = ' ';
+                            bytes[4] = ' ';
+                            bytes[5] = ' ';
+                            bytes[6] = ' ';
                             break;
                         case STATE_REDIRECT:
-                            bytes[addr.position + 2] = 'd'; // стрелочка убирается
+                            //bytes[addr.position + 2] = 'd'; // стрелочка убирается
+                            bytes[4] = ' ';
+                            bytes[5] = ' ';
+                            bytes[6] = ' ';
+                            bytes[7] = ' ';
                             break;
                         default:// нужная вещь. чтобы отсечь состояния, которые не при чем в зональном табло
                             return;
 
                     }
                     try {
-                        System.out.println("SEND TO RS485 " + new String(bytes));
+                        String s = "";
+                        for (byte b : bytes) {
+                            s = s + (b & 0xFF) + "_";
+                        }
+                        System.out.println("SEND TO RS485 " + s);
                         port.send(bytes);
                     } catch (Exception ex) {
                         System.err.println("!!! ERROR !!! " + ex);
                     }
-
 
                     try {
                         Thread.sleep(200);
@@ -96,9 +121,7 @@ public class Sender485 {
         });
         sndThread.setDaemon(true);
 
-
         // подготовим порт для отсыла
-
         // параметры порта
         try (FileInputStream fis = new FileInputStream(propFile)) {
             props.load(fis);

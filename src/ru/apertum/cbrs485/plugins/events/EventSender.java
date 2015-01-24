@@ -32,6 +32,11 @@ import ru.apertum.cbrs485.plugins.IClientboardRS485PluginUID;
 public class EventSender implements IChangeCustomerStateEvent, IClientboardRS485PluginUID {
 
     @Override
+    public void change(String userPoint, String customerPrefix, int customerNumber, CustomerState cs) {
+        Sender485.getInstance().send(new Event(userPoint, customerPrefix + customerNumber, cs));
+    }
+
+    @Override
     public void change(QCustomer qc, CustomerState cs, Long newServiceId) {
         // Создаем событие
         String nom = qc.getPrefix() + qc.getNumber();
